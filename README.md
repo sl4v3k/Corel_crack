@@ -3,10 +3,13 @@
 There are several ways to unlock trial version of Corel app. The materials and information here are guides how patch Corel executable to remove trial limitations. All this is for educational purpose.
 
 # dta descrambler
-dta files contain informations about serial code. Serial code contains information about license type and trial period.
+dta files contain informations about serial code. Serial code contains information about license type and trial period. This is puplished for educaional purpose. Full srial number generator is not available to public yet.
 
 # Method
-Simplest method to bypas trial limitations it to patch PASMUTILITY.dll and redirect serial number parser to parse trial as normal. Just replace PASMUTILITY.dll in Your Corel path and have full verison.
+Simplest method to bypass trial limitations is to patch PASMUTILITY.dll and redirect serial number parser to parse trial as normal. Just replace PASMUTILITY.dll in Your Corel path and have full verison.
+Tested on:
+CorelDraw Version 24.5.0.731
+Corel Painter 23.0.0.244
 
 ```
 C:\Program Files\Corel\PASMUtility\v1\PASMUTILITY.dll
