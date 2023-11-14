@@ -8,8 +8,8 @@ dta files contain informations about serial code. Serial code contains informati
 # Method
 Simplest method to bypass trial limitations is to patch PASMUTILITY.dll and redirect serial number parser to parse trial as normal. Just replace PASMUTILITY.dll in Your Corel path and have full verison.
 Tested on:
-CorelDraw Version 24.5.0.731
-Corel Painter 23.0.0.244
+* CorelDraw Version 24.5.0.731
+* Corel Painter 23.0.0.244
 
 ```
 C:\Program Files\Corel\PASMUtility\v1\PASMUTILITY.dll
