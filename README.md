@@ -11,6 +11,7 @@ Tested on:
 * CorelDraw Version 24.5.0.731
 * Corel Painter 23.0.0.244
 
+Function reposnsible for serial number mapping:
 ```
 C:\Program Files\Corel\PASMUtility\v1\PASMUTILITY.dll
 
