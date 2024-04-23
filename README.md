@@ -1,5 +1,4 @@
 # Corel apps generc crack
-
 There are several ways to unlock trial version of Corel app. The materials and information here are guides how patch Corel executable to remove trial limitations. All this is for educational purpose.
 
 # dta descrambler
@@ -10,6 +9,9 @@ Simplest method to bypass trial limitations is to patch PASMUTILITY.dll and redi
 Tested on:
 * CorelDraw Version 24.5.0.731
 * Corel Painter 23.0.0.244
+* CorelDraw Version 25.0.0.230
+
+# Patched places
 
 Function responsible for serial number mapping:
 ```
@@ -161,3 +163,62 @@ IDA look of above function:
 ```
 
 
+```
+this is function that takes process number of tiral deys, compares to 15, this is max period
+put to 0 to comapre to
+text:0000000180053BD0                         sub_180053BD0   proc near               ; DATA XREF: .rdata:0000000180373700↓o
+.text:0000000180053BD0                                                                 ; .pdata:00000001804F56B8↓o
+.text:0000000180053BD0
+.text:0000000180053BD0                         var_18          = dword ptr -18h
+.text:0000000180053BD0                         arg_0           = qword ptr  8
+.text:0000000180053BD0                         arg_8           = qword ptr  10h
+.text:0000000180053BD0
+.text:0000000180053BD0 48 89 54 24 10                          mov     [rsp+arg_8], rdx
+.text:0000000180053BD5 48 89 4C 24 08                          mov     [rsp+arg_0], rcx
+.text:0000000180053BDA 48 83 EC 38                             sub     rsp, 38h
+.text:0000000180053BDE C7 44 24 20 00 00 00 00                 mov     [rsp+38h+var_18], 0
+.text:0000000180053BE6 48 8B 44 24 40                          mov     rax, [rsp+38h+arg_0]
+.text:0000000180053BEB 48 05 C0 01 00 00                       add     rax, 1C0h
+.text:0000000180053BF1 48 8B C8                                mov     rcx, rax
+.text:0000000180053BF4 E8 87 74 06 00                          call    sub_1800BB080
+.text:0000000180053BF9 83 F8 0F                                cmp     eax, 0x0F                    <------ 83 F8 00 cmp     eax, 0x00
+.text:0000000180053BFC 75 2B                                   jnz     short loc_180053C29
+.text:0000000180053BFE 48 8B 44 24 40                          mov     rax, [rsp+38h+arg_0]
+.text:0000000180053C03 48 83 B8 18 15 00 00 00                 cmp     qword ptr [rax+1518h], 0
+.text:0000000180053C0B 75 1C                                   jnz     short loc_180053C29
+.text:0000000180053C0D 48 8B 54 24 48                          mov     rdx, [rsp+38h+arg_8]
+.text:0000000180053C12 48 8B 44 24 40                          mov     rax, [rsp+38h+arg_0]
+.text:0000000180053C17 48 8B 88 80 15 00 00                    mov     rcx, [rax+1580h]
+.text:0000000180053C1E E8 2D 1B FE FF                          call    sub_180035750
+.text:0000000180053C23 89 44 24 20                             mov     [rsp+38h+var_18], eax
+.text:0000000180053C27 EB 40                                   jmp     short loc_180053C69
+.text:0000000180053C29                         ; ---------------------------------------------------------------------------
+.text:0000000180053C29
+.text:0000000180053C29                         loc_180053C29:                          ; CODE XREF: sub_180053BD0+2C↑j
+.text:0000000180053C29                                                                 ; sub_180053BD0+3B↑j
+.text:0000000180053C29 48 8B 44 24 40                          mov     rax, [rsp+38h+arg_0]
+.text:0000000180053C2E 48 05 C0 01 00 00                       add     rax, 1C0h
+.text:0000000180053C34 48 8B C8                                mov     rcx, rax
+.text:0000000180053C37 E8 44 74 06 00                          call    sub_1800BB080
+.text:0000000180053C3C 83 F8 0F                                cmp     eax, 0x0F                    <------ 83 F8 00 cmp     eax, 0x00
+.text:0000000180053C3F 75 19                                   jnz     short loc_180053C5A
+.text:0000000180053C41 48 8B 44 24 40                          mov     rax, [rsp+38h+arg_0]
+.text:0000000180053C46 48 05 C8 06 00 00                       add     rax, 6C8h
+.text:0000000180053C4C 48 8B C8                                mov     rcx, rax
+.text:0000000180053C4F E8 3C 2A 06 00                          call    sub_1800B6690
+.text:0000000180053C54 89 44 24 20                             mov     [rsp+38h+var_18], eax
+.text:0000000180053C58 EB 0F                                   jmp     short loc_180053C69
+.text:0000000180053C5A                         ; ---------------------------------------------------------------------------
+.text:0000000180053C5A
+.text:0000000180053C5A                         loc_180053C5A:                          ; CODE XREF: sub_180053BD0+6F↑j
+.text:0000000180053C5A 48 8B 44 24 40                          mov     rax, [rsp+38h+arg_0]
+.text:0000000180053C5F 8B 80 CC 00 00 00                       mov     eax, [rax+0CCh]
+.text:0000000180053C65 89 44 24 20                             mov     [rsp+38h+var_18], eax
+.text:0000000180053C69
+.text:0000000180053C69                         loc_180053C69:                          ; CODE XREF: sub_180053BD0+57↑j
+.text:0000000180053C69                                                                 ; sub_180053BD0+88↑j
+.text:0000000180053C69 8B 44 24 20                             mov     eax, [rsp+38h+var_18]
+.text:0000000180053C6D 48 83 C4 38                             add     rsp, 38h
+.text:0000000180053C71 C3                                      retn
+.text:0000000180053C71                         sub_180053BD0   endp
+```
